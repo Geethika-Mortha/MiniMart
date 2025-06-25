@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMart - College Classifieds</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-shopping-bag"></i>
+                <span>MiniMart</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="viewitems.html" class="nav-link">
+                    <i class="fas fa-eye"></i>
+                    Browse Items
+                </a>
+                <a href="postitem.html" class="nav-link">
+                    <i class="fas fa-plus"></i>
+                    Sell Item
+                </a>
+                <a href="about.html" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    About
+                </a>
+                <a href="admin.html" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    Admin
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title" data-aos="fade-up">
+                    Welcome to <span class="gradient-text">MiniMart</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up">
+                    The ultimate college marketplace where students buy and sell used items easily and safely.
+                    From textbooks to gadgets, find everything you need at student-friendly prices.
+                </p>
+                <div class="hero-buttons">
+                    <a href="viewitems.html" class="btn btn-primary" data-aos="fade-up">
+                        <i class="fas fa-search" data-aos="fade-up"></i>
+                        Browse Items
+                    </a>
+                    <a href="postitem.html" class="btn btn-secondary" data-aos="fade-up">
+                        <i class="fas fa-plus" data-aos="fade-up"></i>
+                        Sell Something
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-book"></i>
+                    <span>Textbooks</span>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-laptop"></i>
+                    <span>Electronics</span>
+                </div>
+                <div class="floating-card">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Accessories</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Why Choose MiniMart?</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" >
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt" data-aos="fade-up"></i>
+                    </div>
+                    <h3 >Safe & Secure</h3>
+                    <p >All listings are verified and we provide secure contact methods to ensure safe transactions.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign" data-aos="fade-up"></i>
+                    </div>
+                    <h3>Student-Friendly Prices</h3>
+                    <p>Find great deals on textbooks, electronics, and more at prices that fit your student budget.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-users" data-aos="fade-up"></i>
+                    </div>
+                    <h3>College Community</h3>
+                    <p>Connect with fellow students in your college and build a trusted marketplace community.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt" data-aos="fade-up"></i>
+                    </div>
+                    <h3>Easy to Use</h3>
+                    <p>Simple, intuitive interface that works perfectly on all devices - desktop, tablet, and mobile.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" >
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up" >Popular Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterByCategory('Books')" data-aos="fade-up">
+                    <div class="category-icon">
+                        <i class="fas fa-book" data-aos="fade-up"></i>
+                    </div>
+                    <h3>Books</h3>
+                    <p>Textbooks, novels, study guides</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Electronics')" data-aos="fade-up" >
+                    <div class="category-icon">
+                        <i class="fas fa-laptop" data-aos="fade-up"></i>
+                    </div>
+                    <h3>Electronics</h3>
+                    <p>Laptops, phones, gadgets</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Accessories')" data-aos="fade-up">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt" data-aos="fade-up"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Bags, watches, jewelry</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('Others')" data-aos="fade-up">
+                    <div class="category-icon">
+                        <i class="fas fa-ellipsis-h" data-aos="fade-up"></i>
+                    </div>
+                    <h3>Others</h3>
+                    <p>Furniture, sports, misc</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Items Preview -->
+    <section class="recent-items">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-aos="fade-up">Recent Listings</h2>
+                <a href="viewitems.html" class="view-all-btn" data-aos="fade-up">
+                    View All Items
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="items-preview" id="recent-items-container" data-aos="fade-up">
+                <!-- Recent items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-aos="fade-up">Ready to Start Trading?</h2>
+                <p data-aos="fade-up">Join thousands of students who are already buying and selling on MiniMart</p>
+                <div class="cta-buttons">
+                    <a href="postitem.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Post Your First Item
+                    </a>
+                    <a href="viewitems.html" class="btn btn-outline">
+                        <i class="fas fa-search"></i>
+                        Start Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>MiniMart</span>
+                    </div>
+                    <p>Connecting college students through a simple, secure marketplace for buying and selling used items.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="viewitems.html">Browse Items</a></li>
+                        <li><a href="postitem.html">Sell Item</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="viewitems.html?category=Books">Books</a></li>
+                        <li><a href="viewitems.html?category=Electronics">Electronics</a></li>
+                        <li><a href="viewitems.html?category=Accessories">Accessories</a></li>
+                        <li><a href="viewitems.html?category=Others">Others</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> lakshmianushameegada@gmail.com </p>
+                    <p><i class="fas fa-phone"></i> (+91) 9392626328</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MiniMart. Built with ❤️ for college students.</p>
+            </div>
+        </div>
+    </footer>
+
+      <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
